@@ -12,7 +12,7 @@ train_num = 1000
 # 导入训练集数据
 train_data = dataloader.DataLoader(
     datasets.CIFAR10(root='data/', train=True, transform=transforms.Compose([
-        transforms.Resize(32, 32),      # 重新设置图片大小
+        transforms.Resize((32, 32)),      # 重新设置图片大小
         transforms.ToTensor(),      # 将图片转化为tensor
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])         # 进行归一化
@@ -22,7 +22,7 @@ train_data = dataloader.DataLoader(
 # 导入测试集数据
 train_test = dataloader.DataLoader(
     datasets.CIFAR10(root='data/', train=False, transform=transforms.Compose([
-        transforms.Resize(32, 32),
+        transforms.Resize((32, 32)),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.485, 0.456, 0.406],
                              std=[0.229, 0.224, 0.225])
